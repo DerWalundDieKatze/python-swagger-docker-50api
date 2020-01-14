@@ -26,7 +26,10 @@ def getPoolTransactions(api_name, params):
 	'''
 	try:
 		result = request_Api(api_name, params)
-		print("获取交易池中的交易信息".format(result))
+		# print("获取交易池中的交易信息{}".format(result))
+		result = result["result"]
+		print("获取交易池中的交易信息{}".format(result))
+
 		return result
 	except Exception as e:
 		print("获取交易池中的交易信息api报错,{}".format(e))
@@ -36,4 +39,4 @@ def getPoolTransactions(api_name, params):
 if __name__ == '__main__':
 	api_name = "blockmgr_getPoolTransactions"
 	params = ["0x8a8e541ddd1272d53729164c70197221a3c27486"]
-	request_Api(api_name, params)
+	getPoolTransactions(api_name, params)

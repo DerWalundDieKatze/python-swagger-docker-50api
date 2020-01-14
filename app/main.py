@@ -35,6 +35,7 @@ from app.v1.v1_chain_getReceipt import chain_getReceipt
 from app.v1.v1_chain_getReputation import chain_getReputation
 from app.v1.v1_chain_getTransactionByBlockHeightAndIndex import chain_getTransactionByBlockHeightAndIndex
 from app.v1.v1_consensus_changeWaitTime import consensus_changeWaitTime
+from app.v1.v1_consensus_getMiners import consensus_getMiners
 from app.v1.v1_log_setLevel import log_setLevel
 from app.v1.v1_log_setVmodule import log_setVmodule
 from app.v1.v1_p2p_addPeers import p2p_addPeers
@@ -140,6 +141,8 @@ app.register_blueprint(account_importPrivkey, url_prefix="/account_importPrivkey
 app.register_blueprint(consensus_changeWaitTime, url_prefix="/consensus_changeWaitTime_change_wait_time")
 '''新增api'''
 app.register_blueprint(chain_getCandidateAddrs, url_prefix="/chain_getCandidateAddrs_get_candidate_addrs")
+app.register_blueprint(consensus_getMiners, url_prefix="/consensus_getMiners_get_miners")
+
 
 
 

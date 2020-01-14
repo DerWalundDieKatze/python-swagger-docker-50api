@@ -24,11 +24,15 @@ def sendRawTransaction(api_name, params):
 	'''
 	try:
 		result = request_Api(api_name, params)
+		result = result["result"]
 		print("发送已签名的交易，返回交易哈希，{}".format(result))
 		return result
 	except Exception as e:
 		print("发送已签名的交易api错误，{}".format(e))
 		return -1
+	finally:
+		print("发送已签名的交易api异常，{}".format(result))
+		
 
 
 if __name__ == '__main__':
