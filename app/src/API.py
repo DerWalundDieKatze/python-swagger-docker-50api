@@ -15,7 +15,9 @@ def request_Api(api_name, params):
 	:return:
 	"""
 	("api名字: {}  -- 参数: {}".format(api_name, params))
-	url = "http://47.75.98.179:35645"
+	#url = "http://47.75.98.179:35645"
+	url = "http://127.0.0.1:15645"
+
 	
 	payload = {
 		'jsonrpc': '2.0',
@@ -37,8 +39,10 @@ def request_Api(api_name, params):
 		jsonDic = json.loads(response.text)
 		return jsonDic
 	except Exception as e:
-		logging.error("接口报错".format(e))
+		logging.error("接口报错{}".format(e))
 		return -1  # -1 默认接口调用失败
+	finally:
+		print("主接口返回,{}".format(response))
 
 
 def save_excel(account, result, sheet1_name, sheet2_name, file_name):

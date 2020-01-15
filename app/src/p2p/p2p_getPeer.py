@@ -28,11 +28,13 @@ def getPeers(api_name, params):
 	'''
 	try:
 		result = request_Api(api_name, params)
-		print("获取当前连接的节点，当前节点为：{}".format(result))
+		#print("获取当前连接的节点，当前节点为：{}".format(result))
 		return result
 	except Exception as e:
 		print("获取当前连接的节点api报错，{}".format(e))
 		return -1
+	finally:
+		print("获取当前连接的节点，当前节点为：{}".format(result))
 
 
 if __name__ == '__main__':

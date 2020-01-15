@@ -11,7 +11,7 @@
 '''
 
 from flask import Blueprint
-from app.src.p2p.p2p_getPeers import *
+from app.src.p2p.p2p_getPeer import *
 
 p2p_getPeers = Blueprint('p2p_getPeers', __name__)
 

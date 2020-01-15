@@ -27,7 +27,8 @@ def getLogs(api_name, params):
 
 	try:
 		result = request_Api(api_name, params)
-		print("根据txhash获取交易log信息成功，地址为{}".format(result))
+		result = result["result"]
+		print("根据txhash获取交易log信息成功，log为{}".format(result))
 		return result
 	except Exception as e:
 		print("根据txhash获取交易log信息失败，api返回错误，返回值为{}".format(e))
@@ -36,5 +37,5 @@ def getLogs(api_name, params):
 
 if __name__ == '__main__':
 	api_name = "chain_getLogs"
-	params = ["0x7d9dd32ca192e765ff2abd7c5f8931cc3f77f8f47d2d52170c7804c2ca2c5dd9"]
+	params = ["0xfb70b2e0b9984112f22169c59c7fed3ba1c181e7b4c0d7ed86af87bbda6a0f35"]
 	getLogs(api_name, params)
